@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>腾云摄影</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav>
+        <div class="logo">腾云摄影<div class="logob">为客户创造 为未来创新</div></div>
+        
+        <ul>
+            <li>首页</li>
+            <li>关于</li>
+            <li onclick="showContact()">联系我们</li>
+        </ul>
+    </nav>
+
+    <iframe id="my-iframe3" onload="resizeIframe(this)" src="img.html" class="iframe-animation1" style="width: 100%; border: none; overflow: hidden; -ms-overflow-style: none; /* IE和Edge浏览器的兼容性 */ scrollbar-width: none;"></iframe>
+    
+    <div><pre>
+        
+    </pre>
+    </div>
+    <div class="centered-title">
+        <h1>八大核心业务</h1>
+    </div>
+    <!-- 中央部分 -->
+    <section class="content">
+        <div class="section">
+            <img src="img/xc.png"  class="imgi" alt="Section 3">
+            <p>宣传片拍摄</p >
+        </div>
+        <div class="section">
+            <img src="img/ft.png" class="imgi"  alt="Section 3">
+            <p>访谈拍摄</p >
+        </div>
+        <div class="section">
+            <img src="img/hz.png"  class="imgi" alt="Section 2">
+            <p>合照拍摄</p >
+        </div>
+        <div class="section">
+            <img src="img/cp.png" class="imgi" alt="Section 1">
+            <p>产品摄影</p >
+        </div>
+    </section>
+    <section class="content">
+        <div class="section">
+            <img src="img/dp.png" class="imgi" alt="Section 1">
+            <p>店铺拍摄</p >
+        </div>
+        <div class="section">
+            <img src="img/gz.png"  class="imgi" alt="Section 3">
+            <p>人像摄影</p >
+        </div>
+        <div class="section">
+            <img src="img/sw.png"  class="imgi" alt="Section 2">
+            <p>三维建模</p >
+        </div>
+        <div class="section">
+            <img src="img/zc.png" class="imgi"  alt="Section 3">
+            <p>会议拍摄</p >
+        </div>
+    </section>
+    <div><pre>
+
+    </pre>
+    </div>
+    <div class="centered-title">
+        <h1>专业服务流程</h1>
+    </div>
+    <div class="workflow-container">
+        <div class="horizontal-line"></div>
+        <div class="step">
+            <div class="vertical-line"></div>
+            <div class="step-content">
+                <img src="img/gt.jpg" alt="需求沟通">
+                <p>需求沟通</p >
+            </div>
+        </div>
+        <div class="step">
+            <div class="vertical-line"></div>
+            <div class="step-content">
+                <img src="img/ss.jpg" alt="专业拍摄">
+                <p>专业拍摄</p >
+            </div>
+        </div>
+        <div class="step">
+            <div class="vertical-line"></div>
+            <div class="step-content">
+                <img src="img/hq.jpg" alt="后期处理">
+                <p>后期处理</p >
+            </div>
+        </div>
+    </div>
+    <div><pre>
+
+    </pre>
+    </div>
+    <iframe id="my-iframe4" onload="resizeIframe(this)" src="img1.html" class="iframe-animation" style="width: 100%; border: none; overflow: hidden; -ms-overflow-style: none; /* IE和Edge浏览器的兼容性 */ scrollbar-width: none;"></iframe>
+    
+    <!-- 底部图库 -->
+    <section class="gallery" style="visibility: hidden;">
+        <div class="thumbnail"><img src="img/thumb1.jpg" alt="Thumbnail 1"></div>
+        <div class="thumbnail"><img src="img/thumb2.jpg" alt="Thumbnail 2"></div>
+        <div class="thumbnail"><img src="img/thumb3.jpg" alt="Thumbnail 3"></div>
+        <div class="thumbnail"><img src="img/thumb4.jpg" alt="Thumbnail 4"></div>
+    </section>
+
+    <!-- 联系 -->
+    <footer>
+        <p>电话：17372739936 | 微信：steadygraphic</p >
+        <button onclick="showContact()">联系</button>
+        <p>版权所有©2024 腾云科技</p >
+    </footer>
+
+    <!-- 联系方式弹窗 -->
+    <div id="contact-popup" class="popup" >
+        <div style="position: fixed;height:100%;width: 100%;left:0;top:0" onclick="closeContact()"></div>
+        <div class="popup-content">
+            <span class="close" onclick="closeContact()">&times;</span>
+            <h2>联系我们</h2>
+            <p>电话：15325624395<a href="tel:15325624395">立即拨打</a></p>
+            <p>微信：steadygraphic</p>
+        </div>
+
+    </div>
+    
+    <div id="message"></div>
+</body>
+</html>

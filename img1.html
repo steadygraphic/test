@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>背景图片演示</title>
+  <style>
+    @keyframes slide-in {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(0); }
+    }
+
+    .animate-slide-in {
+        animation: slide-in 2s ease;
+    }
+    #background {
+      color: white;
+      background-color: white;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      z-index: -1;
+      transition: transform 5s ease-in-out;
+    }
+    #content {
+      position: absolute;
+      top: 40%;
+      left: 0%;
+      width: 100%;
+      color: white;
+      text-align: center;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+  </style>
+</head>
+<body style="background-color: white; align-items: center; text-align: center;">
+<div style="position: fixed;left: 0%;top: 0%;height: 100%;width:100%;">
+<img id="background"></img></div>
+
+<script>
+  var images = [
+    'img/c1.png',
+    'img/c2.png',
+    'img/c3.png',
+    'img/c4.png',
+    'img/c5.png',
+    'img/c6.png',
+    'img/c7.png',
+    'img/c8.png',
+    'img/c9.png',
+    'img/c10.png'
+  ];
+
+  var paragraphs = document.getElementsByTagName('p');
+  var headings = document.getElementsByTagName('h1');
+
+  function triggerAnimation() {
+    for (var i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].classList.add('animate-slide-in');
+    }
+
+    for (var i = 0; i < headings.length; i++) {
+      headings[i].classList.add('animate-slide-in');
+    }
+  }
+
+  function onMouseMove(e) {
+    window.removeEventListener("mousemove", onMouseMove);
+    triggerAnimation();
+  }
+
+  window.addEventListener("mousemove", onMouseMove);
+  rr=Math.floor(Math.random() * images.length)
+  function getRandomImage() {
+    var randomIndex = rr;
+    rr=rr+1
+    if (rr>Math.floor(Math.random() * images.length)){
+      
+      rr=0;
+    }
+    return images[randomIndex];
+  }
+
+  var background = document.getElementById("background");
+
+  function isMouseOverElement(el, e) {
+    var rect = el.getBoundingClientRect();
+    return (
+      e.clientX >= rect.left &&
+      e.clientX <= rect.right &&
+      e.clientY >= rect.top &&
+      e.clientY <= rect.bottom
+    );
+  }
+
+  function onMouseMove(e) {
+    if (isMouseOverElement(background, e)) {
+      background.style.transform = "scale(1.1)";
+      window.removeEventListener("mousemove", onMouseMove);
+    }
+  }
+
+  window.addEventListener("mousemove", onMouseMove);
+
+  // Set initial random image
+  background.src = getRandomImage();
+
+  // Change background image every 5 seconds
+  var scale = 1.2;
+  setInterval(function() {
+    background.src = getRandomImage();
+    if (scale == 1) {
+      background.style.transform = "scale(1.1)";
+      scale = 1.2;
+    } else {
+      background.style.transform = "scale(1)";
+      scale = 1;
+    }
+  }, 6000);
+</script>
+</body>
+</html>
